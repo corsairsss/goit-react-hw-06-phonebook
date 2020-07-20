@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 
 import phoneBookAction from '../../redux/phoneBookActions.js';
 
-import s from './ContactList.module.css';
+import s from './ContactListItem.module.css';
 
-const ContactItem = ({ phone, name, id, removeContact }) => {
+const ContactItem = ({ phone, name, id, theme, removeContact }) => {
   const href = `tel:+38${phone}`;
-
   return (
     <li key={id} className={s.list__item}>
       <span>{name}:</span>
-      <a href={href}>{phone}</a>
-      <button type="button" onClick={removeContact}>
-        Delete
+      <a href={href} className={theme === 'light' ? s.dark : s.light}>
+        {phone}
+      </a>
+      <button className={s.btn_delete} type="button" onClick={removeContact}>
+        X
       </button>
     </li>
   );
@@ -24,6 +25,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     ...contact,
+    theme: state.PhBookTheme.theme,
   };
 };
 

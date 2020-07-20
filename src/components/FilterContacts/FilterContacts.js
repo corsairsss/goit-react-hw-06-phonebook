@@ -7,7 +7,7 @@ import s from './FilterContacts.module.css';
 
 function FilterContacts({ value, onChangeFilter }) {
   return (
-    <>
+    <div className={s.findContact}>
       <p className={s.filterTitle}>Find contacts by name</p>
       <input
         type="text"
@@ -16,7 +16,7 @@ function FilterContacts({ value, onChangeFilter }) {
         className={s.filterInput}
         placeholder="Search..."
       />
-    </>
+    </div>
   );
 }
 

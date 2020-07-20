@@ -38,7 +38,7 @@ class ContactForm extends Component {
         </label>
 
         <label className={s.form__label}>
-          Phone:
+          Number:
           <input
             className={s.form__input}
             type="number"
