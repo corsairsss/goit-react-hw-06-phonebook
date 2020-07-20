@@ -14,8 +14,11 @@ const addContact = createAction('phoneBook/addContact', ({ name, phone }) => ({
 const removeContact = createAction('phoneBook/removeContact');
 const changeFilter = createAction('phoneBook/changeFilter');
 
+const changeTheme = createAction('phoneBook/changeTheme');
+
 export default {
   addContact,
   removeContact,
   changeFilter,
+  changeTheme,
 };
