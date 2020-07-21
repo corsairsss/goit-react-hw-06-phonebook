@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import phoneBookAction from '../../redux/phoneBookActions.js';
+import defaultState from './defaultState.js';
 
 import s from './ContactForm.module.css';
 
 class ContactForm extends Component {
-  state = {
-    name: '',
-    phone: '',
-  };
+  state = defaultState;
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -20,7 +18,7 @@ class ContactForm extends Component {
     e.preventDefault();
     const { onAddContact } = this.props;
     onAddContact(this.state);
-    this.setState({ name: '', phone: '' });
+    this.setState(defaultState);
   };
 
   render() {

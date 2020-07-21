@@ -12,7 +12,7 @@ function FilterContacts({ value, onChangeFilter }) {
       <input
         type="text"
         value={value}
-        onChange={e => onChangeFilter(e.target.value)}
+        onChange={({ target }) => onChangeFilter(target.value)}
         className={s.filterInput}
         placeholder="Search..."
       />

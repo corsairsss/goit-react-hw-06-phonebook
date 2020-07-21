@@ -7,15 +7,18 @@ import ContactList from './ContactList/ContactList.js';
 import FilterContacts from './FilterContacts/FilterContacts.js';
 import Button from './Button/Button.js';
 
-const App = ({ state }) => {
-  const isContacts = state.contacts.items.length;
+const App = ({ contacts }) => {
+  const isContacts = contacts.items.length;
+  const isShowFindCOntact = isContacts >= 2;
+  const isShowContactList = isContacts !== 0;
+
   return (
     <>
       <Button />
       <Section title={'Phonebook'}>
         <ContactForm />
-        {isContacts >= 2 && <FilterContacts />}
-        {isContacts !== 0 && <ContactList />}
+        {isShowFindCOntact && <FilterContacts />}
+        {isShowContactList !== 0 && <ContactList />}
       </Section>
     </>
   );
@@ -23,7 +26,7 @@ const App = ({ state }) => {
 
 const mapStateToprops = state => {
   return {
-    state,
+    ...state,
   };
 };
 

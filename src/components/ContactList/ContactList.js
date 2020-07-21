@@ -16,9 +16,9 @@ const ContactList = ({ list }) => {
 };
 
 const mapStateToProps = state => {
-  const contacts = state.contacts;
-  const filtredList = contacts.items.filter(item =>
-    item.name.toLocaleLowerCase().includes(contacts.filter.toLocaleLowerCase()),
+  const { items: contacts, filter } = state.contacts;
+  const filtredList = contacts.filter(({ name }) =>
+    name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()),
   );
   return {
     list: filtredList,

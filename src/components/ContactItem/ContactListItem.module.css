@@ -11,25 +11,35 @@
 }
 
 .btn_delete {
-  width: 25px;
-  height: 25px;
-  color: #ffffff;
-  font-size: 17px;
-  background-color: rgb(255, 0, 0);
+  padding: 0;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 .btn_delete:active {
   outline: none;
 }
 
-.btn_delete:hover {
-  background-color: brown;
-}
 .light {
   color: #ffffff;
 }
 .dark {
   color: black;
+}
+
+.svgLightTheme {
+  fill: #f30606;
+  width: 25px;
+  height: 25px;
+}
+.svgDarkTheme {
+  fill: #ffffff;
+  width: 25px;
+  height: 25px;
+}
+.svgLightTheme:hover {
+  fill: #ff000056;
+}
+.svgDarkTheme:hover {
+  fill: #f30606;
 }
